@@ -1,180 +1,547 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<title>Rulls Mechanic - Taller Mec&aacute;nico</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rulls Mechanic</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f4f4;
+    color:#333;
+}
+
+header{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+header h1{
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:20px;
+}
+
+nav{
+    background:#d60000;
+    text-align:center;
+    padding:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 20px;
+    font-weight:bold;
+}
+
+.hero{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:30px 0;
+}
+
+.section-title{
+    text-align:center;
+    color:#d60000;
+    margin-bottom:30px;
+}
+
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+}
+
+.card{
+    background:white;
+    width:300px;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card h3{
+    text-align:center;
+}
+
+.card p{
+    padding:0 15px 15px;
+}
+
+.stats{
+    background:#111;
+    color:white;
+    display:flex;
+    justify-content:space-around;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.stats h2{
+    color:#ff2a2a;
+}
+
+.contacto{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+}
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+button{
+    background:#d60000;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+/* SECCION DE MARCAS */
+
+.brand-section{
+    background:#111;
+    padding:50px 0;
+    margin-top:40px;
+}
+
+.brand-title{
+    color:white;
+    text-align:center;
+    margin-bottom:30px;
+    font-size:32px;
+}
+
+.logo-slider{
+    overflow:hidden;
+    width:100%;
+}
+
+.logo-track{
+    display:flex;
+    animation:scroll 20s linear infinite;
+}
+
+.logo-track img{
+    width:120px;
+    height:80px;
+    object-fit:contain;
+    margin:0 40px;
+    background:white;
+    padding:10px;
+    border-radius:10px;
+}
+
+@keyframes scroll{
+    0%{
+        transform:translateX(0);
+    }
+
+    100%{
+        transform:translateX(-50%);
+    }
+}
+.whatsapp-btn{
+    display:inline-block;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    padding:15px 30px;
+    border-radius:8px;
+    font-weight:bold;
+    font-size:18px;
+    margin-top:15px;
+    transition:0.3s;
+}
+
+.whatsapp-btn:hover{
+    background:#1ea952;
+    transform:scale(1.05);
+}
+
+.formulario{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+    margin-top:40px;
+}
+
+.formulario table{
+    border-collapse:collapse;
+}
+
+.formulario th{
+    background:#d60000;
+    color:white;
+}
+
+.formulario td,
+.formulario th{
+    border:1px solid #ccc;
+    padding:10px;
+}
+
+.formulario input,
+.formulario textarea,
+.formulario select{
+    width:100%;
+    padding:8px;
+    border:1px solid #ccc;
+    border-radius:4px;
+    box-sizing:border-box;
+}
+.enviar-btn{
+    background:#d60000;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.enviar-btn:hover{
+    background:#aa0000;
+}
+</style>
 </head>
-<body bgcolor="#A1A1A1" text="#000000" link="#0003A1" vlink="#6900A1">
 
-<center>
-<h1>Rulls Mechanic</h1>
-<b><i>Servicio Profesional y de Calidad para tu Autom&oacute;vil</i></b>
-</center>
-    
-<hr>
+<body>
 
-<h2>Sobre Nosotros</h2>
+<header>
+    <h1>RULL´S MECHANIC</h1>
+    <p>Servicio Profesional y de Calidad para tu Automóvil</p>
+</header>
+
+<nav>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#ubicacion">Ubicación</a>
+    <a href="#quejas">Quejas y Sugerencias</a>
+</nav>
+
+<img class="hero"
+src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAESC3flSVJEHd3AAVtMFaZRmZ_gkWngFN2UNLEB2-ug7JY_I82GffuBuJsvhU9Fn9rnzAPZEM3rpMoFVhueXhoJM7Hjqge1ELfYweK6fBGbqqH4FzgoQfbxR5bKkoJznRcSD14=s1360-w1360-h1020-rw">
+
+<div class="container">
+
+<h2 class="section-title" id="nosotros">¿Quiénes Somos?</h2>
+
 <p>
-En <b>rulls mechanic</b> contamos con personal capacitado para brindar soluciones eficientes a veh&iacute;culos de distintas marcas. Nuestro compromiso es ofrecer un servicio honesto, profesional y de calidad para mantener tu autom&oacute;vil en &oacute;ptimas condiciones.
+En Rull´s Mechanic somos un taller mecánico comprometido con brindar soluciones confiables y de alta calidad para el mantenimiento y reparación de vehículos. Nuestro objetivo es ofrecer a cada cliente un servicio profesional, honesto y eficiente que garantice el óptimo funcionamiento de su automóvil y contribuya a su seguridad en cada recorrido.
+
+
+Contamos con personal capacitado y en constante actualización, así como con herramientas y equipos que nos permiten diagnosticar y solucionar una amplia variedad de fallas mecánicas. Trabajamos con vehículos de diferentes marcas y modelos, ofreciendo la atención adecuada de acuerdo con las necesidades específicas de cada cliente.
+
+
+A lo largo de nuestra trayectoria hemos construido una reputación basada en la responsabilidad, la transparencia y la confianza. Creemos que un buen servicio no solo consiste en reparar un vehículo, sino también en orientar al cliente, explicar claramente el trabajo realizado y ofrecer alternativas que se ajusten a sus necesidades y presupuesto.
+
+
+En Rull´s Mechanic nos esforzamos día a día por convertirnos en la mejor opción para quienes buscan un taller mecánico confiable, precios competitivos y garantía en nuestros servicios. La satisfacción de nuestros clientes es nuestra mayor prioridad y el motor que impulsa nuestro crecimiento.
+
+
 </p>
-    
-<center>
-<img src="https://www.edenred.mx/hs-fs/hubfs/Media_Source_2025_(imagenes_blog)/Marzo/taller-mecanico-diferencias-entre-uno-autorizado-y-uno-independiente/por-que-elegir-un-taller-mecanico-independiente.png?width=900&height=500&name=por-que-elegir-un-taller-mecanico-independiente.png" alt="Instalaciones de Rulls Mechanic" width="800" height="430" border="2" hspace="15" vspace="15">
-</center>
 
-<hr>
+<h2 class="section-title" id="servicios">Nuestros Servicios</h2>
 
-<h2>Nuestros Servicios</h2>
-<p>Ofrecemos una amplia gama de soluciones mec&aacute;nicas y de diagn&oacute;stico para tu seguridad:</p>
-    
-<table border="1" width="100%" cellpadding="6" cellspacing="2">
-<tr bgcolor="#4A4A80">
-<td colspan="2"><b><center>Tabla de Servicios Principales</center></b></td>
-</tr>
-<tr>
-<td width="30%"><b>Mantenimiento Preventivo</b></td>
-<td>
-<ul>
-<li>Cambio de aceite y filtros</li>
-<li>Afinaciones</li>
-<li>Revisi&oacute;n de niveles</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td><b>Reparaci&oacute;n Mec&aacute;nica</b></td>
-<td>
-<ol type="A">
-<li>Motor</li>
-<li>Transmisi&oacute;n</li>
-<li>Suspensi&oacute;n</li>
-<li>Frenos</li>
-</ol>
-</td>
-</tr>
-<tr>
-<td><b>Diagn&oacute;stico Electr&oacute;nico</b></td>
-<td>
-Utilizamos equipos especializados para detectar fallas electr&oacute;nicas y mec&aacute;nicas de manera r&aacute;pida y precisa.
-</td>
-</tr>
-</table>
+<div class="cards">
 
-<br><br>
+<div class="card">
+<img src="https://nbautos.cl/wp-content/uploads/2025/02/parallax-3.jpg">
+<h3>Diagnóstico Computarizado</h3>
+<p>Detección rápida y precisa de fallas electrónicas.</p>
+</div>
 
-<center>
-<h2>Lista General de Especialidades</h2>
-<br>
+<div class="card">
+<img src="https://st1.uvnimg.com/e2/ea/bbd8ed384f7d933ef84f847e6b1b/slack-imgs.jpg">
+<h3>Servicio de Frenos</h3>
+<p>Revisión y reparación completa del sistema de frenado.</p>
+</div>
 
-<li>Diagn&oacute;stico computarizado</li>
-<center>
-<img src="https://nbautos.cl/wp-content/uploads/2025/02/parallax-3.jpg" alt="diagnostico" width="500" height="330" border="1" hspace="15" vspace="15">
-</center>
-<br>
+<div class="card">
+<img src="https://mucarefacciones.com/cdn/shop/articles/afinacion_de_auto_1.jpg?v=1730823489">
+<h3>Afinación</h3>
+<p>Mantenimiento preventivo para un mejor rendimiento.</p>
+</div>
 
-<li>Servicio de frenos</li>
-<center>
-<img src="https://st1.uvnimg.com/e2/ea/bbd8ed384f7d933ef84f847e6b1b/slack-imgs.jpg" alt="servicio de frenos" width="500" height="330" border="1" hspace="15" vspace="15">
-</center>
-<br>
+<div class="card">
+<img src="https://image.made-in-china.com/251f0j00oGQUFMwWatVz/made-in-china.jpg">
+<h3>Reparacion de transmisiones automáticas</h3>
+<p>Restauración de transmisiones automáticas convencionales (SAT) y Continuamente Variables (CVT).</p>
+</div>
 
-<li>Afinaci&oacute;n y mantenimiento</li>
-<center>
-<img src="https://mucarefacciones.com/cdn/shop/articles/afinacion_de_auto_1.jpg?v=1730823489" alt="afinacion y mantenimiento" width="500" height="330" border="1" hspace="15" vspace="15">
-</center>
-<br>
+<div class="card">
+<img src="https://www.firestone.com.mx/content/dam/consumer/fst/la/mx/tips/cuidado-de-llantas/suspension-de-carro.jpg">
+<h3>Reparacion de suspención</h3>
+<p>Reparacion de todo el sistema de suspención  (Amortiguadores, orquillas, bujes, rótulas, etc).</p>
+</div>
 
-<li>Suspensi&oacute;n y direcci&oacute;n</li>
-<center>
-<img src="https://amortiautos.com/wp-content/uploads/2018/10/Depositphotos_122146942_small.jpg" alt="suspencion y direccion" width="500" height="330" border="1" hspace="15" vspace="15">
-</center>
-<br>
+<div class="card">
+<img src="https://le-cdn.website-editor.net/s/aadcfb47e27e4d9fae7ca39ee7b1f2c0/dms3rep/multi/opt/refrigeracion-de-motor-aljocar-blog-640w.webp?Expires=1783193537&Signature=Mjo~HYs-kx4sFEE20tzzQDUiXcR2bUwYMa3XnkiQA4r9xSCpXq7n5aS1qPz8njLRqThN7Qmg1sfXFoKa8Z5ZixsobCdyqGEzjVgRBJjPxjXMXY5gYIWVDOGQK7UXbxyVU4izbDd6JMA0VJBsCFmKRaTjiNOdXG-L0DYo-zzB-w3rAAc0gAjRHAlyx0VDQmL1gwgMisEy7UFMzjEa8P~xTE7oiZamHfJsUwHtwmJfr-1bGaD1oedqF0NoRnR64M8Xh-i1-PjNaS1jxZwTw1y0OTResDUf7qq7lrTLk9zzxoxD1kbzevj1OvU6oTP0ZNpICc9qKBx--siqMCFUldpzNQ__&Key-Pair-Id=K2NXBXLF010TJW">
+<h3>sistema de enfriado</h3>
+<p>Diagnostico y reparacion del sistema de refrigeracion del motor.</p>
+</div>
 
-<li>Sistema de enfriamiento</li>
-<center>
-<img src="https://www.kia.com/content/dam/kwcms/pe/es/images/noticias/2020/julio/tips-mantenimiento-sistema-refrigeracion-auto.jpg" alt="sistema de enfriamiento" width="500" height="330" border="1" hspace="15" vspace="15">
-</center>
-<br>
 
-<li>Cambio de aceite</li>
-<center>
-<img src="https://raga.com.mx/cdn/shop/articles/cambio-aceite-coche.jpg?v=1710267061" alt="cambio de aceite" width="500" height="330" border="1" hspace="15" vspace="15">
-</center>
-<br>
+</div>
 
-</center>
+</div>
 
-<hr>
+<div class="stats">
 
-<h2>&iquest;Por qu&eacute; elegirnos?</h2>
-<ul>
-<li>Atenci&oacute;n personalizada</li>
-<img src="https://img.freepik.com/foto-gratis/mecanico-feliz-clienta-pasando-papeleo-taller-reparacion-automoviles_637285-9785.jpg?semt=ais_hybrid&w=740&q=80" alt="atencion personalizada" width="400" height="250" border="1" hspace="15" vspace="15">
+<div>
+<h2>500+</h2>
+<p>Vehículos atendidos</p>
+</div>
 
-<li>Refacciones de calidad</li>
-<img src="https://acnews.blob.core.windows.net/imgnews/large/NAZ_3b1707c12eef45599a1013618a58d615.jpg" alt="refacciones" width="400" height="250" border="1" hspace="15" vspace="15">
+<div>
+<h2>100%</h2>
+<p>Compromiso y calidad</p>
+</div>
 
-<li>Precios competitivos</li>
-<img src="https://media.licdn.com/dms/image/v2/D4E12AQEvpyoA-Gp4yQ/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1725767569662?e=2147483647&v=beta&t=FRW8mNhhlSaq4QW152EIayKFoC6ijgETqsBNcLOuP50" alt="precios" width="400" height="250" border="1" hspace="15" vspace="15">
+<div>
+<h2>Dentro del horario</h2>
+<p>Atención al cliente</p>
+</div>
 
-<li>Garant&iacute;a en nuestros trabajos</li>
-<img src="https://pedroleira.wordpress.com/wp-content/uploads/2012/07/garantia-satisfaccion.jpg?w=277&h=178" alt="garantia" width="400" height="250" border="1" hspace="15" vspace="15">
+</div>
 
-<li>T&eacute;cnicos capacitados</li>
-<img src="https://www.emagister.com/i/wp-content/uploads/2022/05/mecanica.jpg" alt="tecnicos" width="400" height="250" border="1" hspace="15" vspace="15">
-    
-</ul>
+<section class="brand-section">
 
-<hr>
-<h2>Videos Informativos</h2>
-<p>Visualiza nuestro proceso de trabajo en el siguiente video did&aacute;ctico:</p>
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DK7CVqbtW0A" frameborder="0" allowfullscreen>
+<h2 class="brand-title">
+Marcas que Atendemos
+</h2>
+
+<div class="logo-slider">
+
+<div class="logo-track">
+
+<img src="https://cdn.worldvectorlogo.com/logos/toyota-1.svg" alt="Toyota">
+
+<img src="https://cdn.worldvectorlogo.com/logos/nissan-6.svg" alt="Nissan">
+
+<img src="https://cdn.worldvectorlogo.com/logos/honda.svg" alt="Honda">
+
+<img src="https://logos-world.net/wp-content/uploads/2021/03/Kia-Logo.png" alt="Kia">
+
+<img src="https://cdn.worldvectorlogo.com/logos/hyundai-motor-company.svg" alt="Hyundai">
+
+<img src="https://cdn.worldvectorlogo.com/logos/ford-8.svg" alt="Ford"> 
+
+<img src="https://logos-world.net/wp-content/uploads/2021/03/Mazda-Logo.png" alt="Mazda">
+
+<img src="https://logos-world.net/wp-content/uploads/2021/03/Mitsubishi-Logo.png" alt="Mitsubishi">
+
+
+<!-- Repetidos para efecto infinito -->
+
+<img src="https://cdn.worldvectorlogo.com/logos/toyota-1.svg" alt="Toyota">
+
+<img src="https://cdn.worldvectorlogo.com/logos/nissan-6.svg" alt="Nissan">
+
+<img src="https://cdn.worldvectorlogo.com/logos/honda.svg" alt="Honda">
+
+<img src="https://cdn.worldvectorlogo.com/logos/kia-2.svg" alt="Kia">
+
+<img src="https://cdn.worldvectorlogo.com/logos/hyundai-motor-company.svg" alt="Hyundai">
+
+<img src="https://cdn.worldvectorlogo.com/logos/ford-8.svg" alt="Ford">
+
+<img src="https://logos-world.net/wp-content/uploads/2021/03/Mazda-Logo.png" alt="Mazda">
+
+<img src="https://logos-world.net/wp-content/uploads/2021/03/Mitsubishi-Logo.png" alt="Mitsubishi">
+
+</div>
+
+</div>
+
+</section>
+
+<div class="container">
+
+<h2 class="section-title" id="contacto">Contáctanos</h2>
+
+<div class="contacto">
+
+<p><strong>Teléfono:</strong> 221 359 8126</p>         
+
+<p><strong>Correo:</strong> Arisol2211@gmail.com</p>
+
+<p><strong>Facebook:</strong> Rulls Mechanic</p>
+
+<p><strong>Instagram:</strong> @ariel_solano.m</p>
+
+
+
+<a class="whatsapp-btn"
+href="https://wa.me/522213598126?text=Hola,%20me%20interesa%20agendar%20un%20servicio%20para%20mi%20vehículo."
+target="_blank">
+ Solicitar Servicio por WhatsApp
+</a>
+</div>
+
+</div>
+
+
+</div> <!-- Fin de contacto -->
+
+<div class="container">
+
+<h2 class="section-title" id="ubicacion">
+ Ubicación
+</h2>
+
+<div class="contacto">
+
+<p>
+<strong>Dirección:</strong><br>
+Carr. Federal Puebla-Tehuacán 5-km 9,
+Artículo 123, 72980, Puebla, Puebla, México.
+</p>
+
+<iframe
+src="https://maps.google.com/maps?q=Carr.%20Federal%20Puebla-Tehuac%C3%A1n%205-km%209%20Art%C3%ADculo%20123%2072980%20Puebla&t=&z=15&ie=UTF8&iwloc=&output=embed"
+width="100%"
+height="400"
+style="border:0;border-radius:10px;"
+allowfullscreen=""
+loading="lazy">
 </iframe>
-</center>
-<hr>
-<h2>Contacto e Informaci&oacute;n del Taller</h2>
-<p>Si tienes alguna duda o deseas agendar una cita para tu veh&iacute;culo, comun&iacute;cate con nosotros:</p>
-    
-<ul>
-<li><strong>Tel&eacute;fono:</strong> 221 359 8126</li>
-<li><strong>Correo Electr&oacute;nico:</strong> <a href="mailto:Arisol2211@gmail.com">Arisol2211@gmail.com</a></li>
-<li><strong>Facebook:</strong> <a href="https://www.facebook.com/share/1CbzZrV4mq/"_blank">Vis&iacute;tanos en Facebook</a></li>
-<li><strong>Instagram:</strong> <a href="https://www.instagram.com/ariel_solano.m?igsh=MW05MnRvbDVmdmo0ZQ=="_blank">S&iacute;guenos en Instagram</a></li>
-</ul>
-<hr>
-<hr>
 
-<center>
-<h3>Buz&oacute;n De Quejas y Sugerencias</h3>
-<h4>Formulario - Rulls Mechanic</h4>
-</center>
- 
-<p>Sea tan amable de rellenar el siguiente formulario:</p>
-<br>
-    
-<form action="mailto:Arisol2211@gmail.com" method="Post" enctype="Text/Plain">
-Nombre:<br>
-<input type="text" Name="Nombre" size="40">
 <br><br>
-        
-Apellidos<br>
-<input type="text" Name="Apellidos" size="50">
-<br><br>
-        
-Tel&eacute;fono<br>
-<input type="text" Name="Telefono" size="20">
-<br><br>
-        
-Comentarios<br>
-<input type="text" Name="Comentarios" size="100">
-<br><br>
-        
-<center>
-<input type="submit" value="Enviar Formulario">
-&nbsp;&nbsp;
-<input type="reset" value="Vaciar Formulario">
-</center>
+
+<a class="whatsapp-btn"
+href="https://www.google.com/maps/search/?api=1&query=Carr.+Federal+Puebla-Tehuacán+5-km+9,+Artículo+123,+72980,+Puebla"
+target="_blank">
+ Cómo llegar
+</a>
+
+</div>
+
+</div>
+
+<div class="container">
+
+<h2 class="section-title" id="quejas">
+Quejas y Sugerencias
+</h2>
+
+<div class="formulario">
+
+<form action="https://formsubmit.co/Arisol2211@gmail.com" method="POST">
+
+<input type="hidden" name="_subject"
+value="Nueva Queja o Sugerencia - Rulls Mechanic">
+
+<input type="hidden" name="_captcha" value="false">
+
+<input type="hidden" name="_template" value="table">
+
+<table border="1" width="100%" cellpadding="10">
+
+<tr>
+<th colspan="2">
+Datos del Cliente
+</th>
+</tr>
+
+<tr>
+<td><strong>Nombre Completo</strong></td>
+<td><input type="text" name="nombre"></td>
+</tr>
+
+<tr>
+<td><strong>Teléfono</strong></td>
+<td><input type="tel" name="telefono"></td>
+</tr>
+
+<tr>
+<td><strong>Correo Electrónico</strong></td>
+<td><input type="email" name="correo"></td>
+</tr>
+
+<tr>
+<th colspan="2">
+Información de la Queja o Sugerencia
+</th>
+</tr>
+
+<tr>
+<td><strong>Tipo</strong></td>
+<td>
+<select name="tipo">
+<option>Queja</option>
+<option>Sugerencia</option>
+<option>Comentario</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td><strong>Fecha</strong></td>
+<td><input type="date" name="fecha"></td>
+</tr>
+
+<tr>
+<td><strong>Servicio Relacionado</strong></td>
+<td><input type="text" name="servicio"></td>
+</tr>
+
+<tr>
+<td><strong>Descripción</strong></td>
+<td>
+<textarea name="descripcion" rows="6"></textarea>
+</td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+<button type="submit" class="enviar-btn">
+Enviar Reporte
+</button>
+</td>
+</tr>
+
+</table>
 </form>
+</div>
 
- <br>
+<footer>
+    <h3>Rulls Mechanic © 2026</h3>
+    <p>Servicio Profesional para tu Automóvil</p>
+</footer>
 </body>
 </html>
